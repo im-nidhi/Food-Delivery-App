@@ -1,0 +1,42 @@
+/* Footer.css */
+.footer {
+  background-color: #222;
+  color: #fff;
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
+  height: 200px;
+  position: relative;
+  bottom: 0%;
+}
+
+.footer .logo h1 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #ff6b6b;
+}
+
+.footer .flex {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 15px 0;
+}
+
+.footer .flex li {
+  cursor: pointer;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.footer .flex li:hover {
+  color: #ff6b6b;
+}
+
+.footer p {
+  margin: 5px 0;
+  font-size: 14px;
+  color: #aaa;
+}

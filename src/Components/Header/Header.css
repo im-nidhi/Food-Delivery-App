@@ -1,0 +1,47 @@
+.header{
+    background-image: url("https://blog.swiggy.com/wp-content/uploads/2024/02/Masala-Dosa-1024x538.jpg");
+    background-blend-mode:overlay;
+    background-color:#777272;
+    height: 34vw;
+    width: 68rem;
+    margin: 30px 100px ;
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    border-radius: 19px;
+}
+.header-contents {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    /* transform: translate(-50%, -50%); */
+    text-align: center;
+    color: white;
+    animation: fadeIn 1s ease;
+}
+.header-contents h2 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+.header-contents p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+.header-contents button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #ff6347;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}

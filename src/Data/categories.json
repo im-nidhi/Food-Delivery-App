@@ -1,0 +1,66 @@
+
+[
+  { "name": "Biryani",
+   "img": "biryani",
+   "subcategories": [
+      { "name": "Veg Biryani", "img": "biryani", "price": 150 },
+      { "name": "Hyderabadi Biryani", "img": "biryani", "price":200 },
+      { "name": "Lucknowi (Awadhi) Biryani", "img": "biryani", "price": 220 },
+      { "name": "Kolkata Biryani", "img": "biryani", "price": 180 },
+      { "name": "Sindhi Biryani", "img": "biryani", "price": 190 },
+      { "name": "Lucknowi (Awadhi) Biryani", "img": "biryani", "price": 220 },
+      { "name": "Kolkata Biryani", "img": "biryani", "price": 180 },
+      { "name": "Sindhi Biryani", "img": "biryani", "price": 190 }
+    ]
+ },
+
+  { "name": "Pizzas",
+   "img": "pizza",
+   "subcategories":["Veg Pizza", "Non-Veg Pizza", "Cheese Pizza"]
+ },
+
+  { "name": "Noodles", 
+  "img": "noodles",
+  "subcategories": ["Veg Noodles", "Chicken Noodles", "Egg Noodles"]
+ },
+
+  { "name": "Ice-Cream",
+   "img": "icecream",
+    "subcategories": ["Vanilla Ice-Cream", "Chocolate Ice-Cream", "Strawberry Ice-Cream"] 
+},
+
+  { "name": "Khichdi",
+   "img": "khichdi",
+    "subcategories": ["Plain Khichdi", "Masala Khichdi", "Vegetable Khichdi"]
+ },
+
+  { "name": "Chinese",
+   "img": "chinese",
+    "subcategories": ["Chow Mein", "Fried Rice", "Spring Rolls", "Momos"]
+ },
+
+  { "name": "Burger",
+   "img": "burger",
+    "subcategories": ["Veg Burger", "Chicken Burger", "Cheese Burger"]
+ },
+
+  { "name": "Sweets",
+   "img": "sweets",
+    "subcategories": ["Gulab Jamun", "Rasgulla", "Barfi", "Ladoo"]
+ },
+
+  { "name": "Salad",
+   "img": "salad",
+    "subcategories": ["Fruit Salad", "Vegetable Salad", "Greek Salad"]
+ },
+
+  { "name": "Sandwich",
+   "img": "sandwich",
+    "subcategories": ["Veg Sandwich", "Grilled Sandwich", "Club Sandwich"]
+ },
+
+  { "name": "Pasta",
+   "img": "pasta",
+    "subcategories": ["Veg Pasta", "Cheese Pasta", "Penne Pasta"]
+ }
+]

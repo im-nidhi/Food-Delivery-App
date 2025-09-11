@@ -1,0 +1,101 @@
+.food-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  cursor: pointer;
+  width: 250px;   
+}
+
+.food-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.food-item-image-container {
+  width: 100%;
+  height: 170px; 
+  overflow: hidden;
+}
+
+.food-item-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.food-item:hover .food-item-image-container img {
+  transform: scale(1.05);
+}
+
+.food-item-info {
+  padding: 12px;
+  text-align: center;
+}
+
+.food-item-info p {
+  margin: 2px 0;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+.food-item-info p:first-child {
+  font-weight: bold;
+  font-size: 18px;
+  color: #222;
+}
+
+.food-item-info p:last-child {
+  color: #e63946; /* highlight price */
+  font-weight: bold;
+  font-size: 17px;
+}
+.add-to-cart {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: 0.3s ease;
+}
+
+.add-to-cart:hover {
+  background-color: #e65c00;
+}
+
+.cart-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cart-controls button {
+  background-color: #ff6600;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease;
+}
+
+/* .cart-controls button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+} */
+
+.cart-controls span {
+  font-size: 16px;
+  font-weight: 600;
+  min-width: 20px;
+  text-align: center;
+}

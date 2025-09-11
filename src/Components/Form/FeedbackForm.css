@@ -1,0 +1,106 @@
+/* FeedbackForm.css */
+.feedback-container {
+  max-width: 30%;
+  max-height: 650px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.feedback-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  font-size: 28px;
+}
+
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.feedback-form input,
+.feedback-form select,
+.feedback-form textarea {
+  padding: 12px 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  transition: 0.3s;
+}
+
+.feedback-form input:focus,
+.feedback-form select:focus,
+.feedback-form textarea:focus {
+  outline: none;
+  border-color: #4cafef;
+  box-shadow: 0 0 5px rgba(76, 175, 239, 0.6);
+}
+
+.feedback-form textarea {
+  min-height: 100px;
+  resize: vertical;
+}
+
+.feedback-form button {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #fce704, #f0560a);
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.feedback-form button:hover {
+  background: linear-gradient(45deg, #1976d2, #4cafef);
+  transform: translateY(-2px);
+}
+
+.feedback-list {
+  margin-top: 30px;
+}
+
+.feedback-list h2 {
+  color: #444;
+  margin-bottom: 15px;
+}
+
+.feedback-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.feedback-list li {
+  background: #f9f9f9;
+  margin-bottom: 12px;
+  padding: 15px;
+  border-radius: 10px;
+  border-left: 5px solid #4cafef;
+}
+
+.feedback-list strong {
+  color: #f57f00;
+}
+
+.delete-btn {
+  margin-top: 15px;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 8px;
+  background: #e53935;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.delete-btn:hover {
+  background: #b71c1c;
+}
