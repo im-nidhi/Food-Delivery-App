@@ -25,7 +25,7 @@ import List7 from './Menu7.webp'
 
 import Category1 from './Category1.jpg'
 import Category2 from './Category2.jpg'
-import Category3 from './Category3.jpeg'
+import Category3 from './category3.jpeg'
 import Category4 from './Category4.jpeg'
 import Category5 from './Category5.jpg'
 import Category6 from './Category6.jpg'

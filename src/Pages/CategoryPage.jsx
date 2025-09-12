@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { Asset } from "../assets/Asset";
-import categories from "../data/categories.json";
+import categories from "../Data/categories.json";
 // import "../Styles/SubCategory.css"
 
 function CategoryPage() {
