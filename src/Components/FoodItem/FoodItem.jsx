@@ -54,7 +54,7 @@ const FoodItem = ({ id, name, price, description, image, category }) => {
     <div className='food-item'>
       <div 
         className="food-item-image-container"
-        onClick={handleFoodClick} // 👈 clicking image/card opens category page
+        onClick={handleFoodClick} 
         style={{ cursor: "pointer" }}
       >
         <img src={image} alt={name} />

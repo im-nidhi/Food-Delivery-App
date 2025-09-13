@@ -25,48 +25,90 @@
 
 // export default Navbar;
 
+// import { NavLink } from "react-router-dom";
+// import { useState } from "react";
+// import "../Styles/Navbar.css";
+// import { Asset } from "../assets/Asset.jsx";
+
+// function Navbar() {
+//   const [isOpen, setIsOpen] = useState(false);
+
+//   return (
+//     <nav className="navbar">
+//       {/* Logo */}
+//       <div className="logo">
+//         <img src={Asset.logo} alt="logo" />
+//         <h1>Foodie</h1>
+//       </div>
+
+//       {/* Hamburger button (only shows on mobile) */}
+//       <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+//         ☰
+//       </button>
+
+//       {/* Navbar items */}
+//       <div className={`items ${isOpen ? "open" : ""}`}>
+//         <NavLink to="/" className={({ isActive }) => (isActive ? "active-link" : "")}>
+//           Home
+//         </NavLink>
+//         <NavLink to="/menu" className={({ isActive }) => (isActive ? "active-link" : "")}>
+//           Menu
+//         </NavLink>
+//         <NavLink to="/cart" className={({ isActive }) => (isActive ? "active-link" : "")}>
+//           Cart
+//         </NavLink>
+//         <NavLink to="/login" className={({ isActive }) => (isActive ? "active-link" : "")}>
+//           Login
+//         </NavLink>
+//         <NavLink to="/admin" className={({ isActive }) => (isActive ? "active-link" : "")}>
+//           Admin
+//         </NavLink>
+//       </div>
+//     </nav>
+//   );
+// }
+
+// export default Navbar;
+
+
 import { NavLink } from "react-router-dom";
-import '../Styles/Navbar.css'
+import { useState } from "react";
+import "../Styles/Navbar.css";
 import { Asset } from "../assets/Asset.jsx";
 
 function Navbar() {
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <nav className="p-4 bg-gray-800 text-white flex justify-between">
-      <div className="logo"> 
-        <img src={Asset.logo} alt="" /> 
+    <nav className="navbar">
+      {/* Logo (left) */}
+      <div className="logo">
+        <img src={Asset.logo} alt="logo" />
         <h1>Foodie</h1>
       </div>
-      <div className="space-x-4 items">
-        <NavLink 
-          to="/" 
-          className={({ isActive }) => (isActive ? "active-link" : "")}
-        >
+
+      {/* Hamburger button (right, only on mobile) */}
+      <button className="menu-toggle" onClick={() => setIsOpen(!isOpen)}>
+        {isOpen ? "✖" : "☰"}
+      </button>
+
+      {/* Navbar items */}
+      <div className={`items ${isOpen ? "open" : ""}`}>
+        <NavLink to="/" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Home
         </NavLink>
-        <NavLink 
-          to="/meenu" 
-          className={({ isActive }) => (isActive ? "active-link" : "")}
-        >
+        <NavLink to="/meenu" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Menu
         </NavLink>
-        <NavLink 
-          to="/cart" 
-          className={({ isActive }) => (isActive ? "active-link" : "")}
-        >
+        <NavLink to="/cart" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Cart
         </NavLink>
-        <NavLink 
-          to="/login" 
-          className={({ isActive }) => (isActive ? "active-link" : "")}
-        >
+        <NavLink to="/login" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Login
         </NavLink>
-        <NavLink 
-          to="/admin" 
-          className={({ isActive }) => (isActive ? "active-link" : "")}
-        >
+        {/* <NavLink to="/admin" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Admin
-        </NavLink>
+        </NavLink> */}
       </div>
     </nav>
   );

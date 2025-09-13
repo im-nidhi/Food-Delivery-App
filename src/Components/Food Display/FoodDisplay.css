@@ -16,3 +16,64 @@
     row-gap: 50px;
     gap: 30px;
 }
+
+/* ✅ Responsive breakpoints */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .food-display {
+    padding: 30px 50px;
+  }
+  .food-display h2 {
+    font-size: 24px;
+  }
+  .food-display-list {
+    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* Mobile (≤ 768px) */
+@media (max-width: 768px) {
+  .food-display {
+    padding: 20px;
+  }
+  .food-display h2 {
+    font-size: 22px;
+  }
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 18px;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  .food-display {
+    padding: 15px;
+  }
+  .food-display h2 {
+    font-size: 20px;
+  }
+  .food-display-list {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 15px;
+  }
+}
+
+/* Extra Small Mobile (≤ 320px) */
+@media (max-width: 320px) {
+  .food-display {
+    padding: 10px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+  }
+  .food-display h2 {
+    font-size: 18px;
+
+  }
+  .food-display-list {
+    grid-template-columns: 1fr; /* Single column */
+    gap: 12px;
+  }
+}

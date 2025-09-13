@@ -20,8 +20,8 @@ nav {
 }
 
 /* Logo */
-.logo{
-  display:flex;
+.logo {
+  display: flex;
   align-items: center;
   gap: 10px;
 }
@@ -35,16 +35,14 @@ nav {
 .logo img:hover {
   transform: scale(1.1);
 }
-.logo h1{
+.logo h1 {
   font-size: 28px;
-  font-family:cursive;
+  font-family: cursive;
   color: #FFFDF6;
   text-shadow: 2px 2px 4px #81E7AF;
-  /* color: #ffffff; */
   font-weight: bold;
-  /* margin-left: 10px; */
 }
-.logo h1::first-letter{
+.logo h1::first-letter {
   font-size: 42px;
   color: #03A791;
 }
@@ -73,17 +71,137 @@ nav {
   border-bottom: 1.5px solid #320244;
 }
 
-/* Responsive Navbar */
+/* ✅ Responsive Navbar */
+
+/* Tablet (≤ 1024px) */
+@media (max-width: 1024px) {
+  .logo h1 {
+    font-size: 24px;
+  }
+  .logo h1::first-letter {
+    font-size: 36px;
+  }
+  .items a {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (≤ 768px) */
 @media (max-width: 768px) {
   nav {
     flex-direction: column;
-    height: auto;
+    align-items: flex-start;
     padding: 10px 20px;
+    height: auto;
+    width: 768px;
   }
 
   .items {
     flex-direction: column;
+    align-items: flex-start;
     gap: 12px;
     margin-top: 10px;
+    width: 100%;
+  }
+
+  .items a {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+  }
+
+  .logo {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
+
+/* Small Mobile (≤ 480px) */
+@media (max-width: 480px) {
+  nav{
+    width: 480px;
+  }
+  .logo img {
+    height: 40px;
+    width: 45px;
+  }
+  .logo h1 {
+    font-size: 20px;
+  }
+  .logo h1::first-letter {
+    font-size: 30px;
+  }
+  .items a {
+    font-size: 14px;
+    padding: 6px 0;
+  }
+  
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ✅ Mobile styles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* show hamburger */
+  }
+
+  .items {
+    display: none; /* hide by default */
+    flex-direction: column;
+    width: 100%;
+    background: #FE5D26;
+    padding: 10px 0;
+  }
+
+  .items.open {
+    display: flex; /* show when toggled */
+  }
+
+  .items a {
+    padding: 10px;
+    text-align: center;
+    width: 100%;
+  }
+}
+
+/* ✅ Extra Small Mobile (≤ 320px) */
+@media (max-width: 320px) {
+  nav {
+    padding: 8px 12px;
+    height: auto;
+    width: 320px;
+  }
+
+  .logo img {
+    height: 35px;
+    width: 40px;
+  }
+
+  .logo h1 {
+    font-size: 16px;
+  }
+  .logo h1::first-letter {
+    font-size: 24px;
+  }
+
+  .menu-toggle {
+    font-size: 24px;
+  }
+
+  .items a {
+    font-size: 12px;
+    padding: 6px 0;
+  }
+
+  .items {
+    gap: 8px;
   }
 }
