@@ -1,5 +1,5 @@
 // src/Components/FeedbackForm.jsx
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import "./FeedbackForm.css";
 import { db } from "../../Services/firebase.jsx"; 
 import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
@@ -12,6 +12,7 @@ const FeedbackForm = () => {
     feedback: "",
   });
   const [feedbacks, setFeedbacks] = useState([]);
+  const bottomRef = useRef(null);
 
   // 🔹 Fetch feedbacks from Firestore
   useEffect(() => {
@@ -23,8 +24,20 @@ const FeedbackForm = () => {
     fetchFeedbacks();
   }, []);
 
+  // 🔹 Scroll to the newest feedback
+  useEffect(() => {
+    bottomRef.current?.scrollIntoView({ behavior: "smooth" });
+  }, [feedbacks]);
+
   const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+
+    // Auto-expand textarea
+    if (name === "feedback") {
+      e.target.style.height = "auto";
+      e.target.style.height = e.target.scrollHeight + "px";
+    }
   };
 
   // 🔹 Save feedback to Firestore
@@ -85,9 +98,7 @@ const FeedbackForm = () => {
 
         <select name="rating" value={formData.rating} onChange={handleChange}>
           {[1, 2, 3, 4, 5].map((r) => (
-            <option key={r} value={r}>
-              {r}
-            </option>
+            <option key={r} value={r}>{r}</option>
           ))}
         </select>
 
@@ -97,6 +108,7 @@ const FeedbackForm = () => {
           value={formData.feedback}
           onChange={handleChange}
           required
+          rows={2}
         />
 
         <button type="submit">Submit</button>
@@ -115,15 +127,11 @@ const FeedbackForm = () => {
                 {fb.feedback}
               </li>
             ))}
+            <div ref={bottomRef} />
           </ul>
         )}
       </div>
 
-      {/* {feedbacks.length > 0 && (
-        <button onClick={clearAll} className="delete-btn">
-          Delete All
-        </button>
-      )} */}
     </div>
   );
 };
