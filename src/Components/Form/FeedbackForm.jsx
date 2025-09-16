@@ -119,11 +119,11 @@ const FeedbackForm = () => {
         )}
       </div>
 
-      {feedbacks.length > 0 && (
+      {/* {feedbacks.length > 0 && (
         <button onClick={clearAll} className="delete-btn">
           Delete All
         </button>
-      )}
+      )} */}
     </div>
   );
 };
