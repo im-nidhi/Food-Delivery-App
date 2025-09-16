@@ -1,5 +1,8 @@
+// src/Components/FeedbackForm.jsx
 import React, { useState, useEffect } from "react";
 import "./FeedbackForm.css";
+import { db } from "../../Services/firebase.jsx"; 
+import { collection, addDoc, getDocs, deleteDoc, doc } from "firebase/firestore";
 
 const FeedbackForm = () => {
   const [formData, setFormData] = useState({
@@ -10,32 +13,51 @@ const FeedbackForm = () => {
   });
   const [feedbacks, setFeedbacks] = useState([]);
 
+  // 🔹 Fetch feedbacks from Firestore
   useEffect(() => {
-    const stored = JSON.parse(localStorage.getItem("feedbacks")) || [];
-    setFeedbacks(stored);
+    const fetchFeedbacks = async () => {
+      const querySnapshot = await getDocs(collection(db, "feedbacks"));
+      const data = querySnapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+      setFeedbacks(data);
+    };
+    fetchFeedbacks();
   }, []);
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  // 🔹 Save feedback to Firestore
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.email || !formData.feedback) {
       alert("All fields are required!");
       return;
     }
 
-    const updated = [...feedbacks, formData];
-    setFeedbacks(updated);
-    localStorage.setItem("feedbacks", JSON.stringify(updated));
+    try {
+      const docRef = await addDoc(collection(db, "feedbacks"), {
+        ...formData,
+        createdAt: new Date(),
+      });
 
-    setFormData({ name: "", email: "", rating: "5", feedback: "" });
+      setFeedbacks([...feedbacks, { id: docRef.id, ...formData }]);
+      setFormData({ name: "", email: "", rating: "5", feedback: "" });
+    } catch (error) {
+      console.error("Error adding feedback:", error);
+    }
   };
 
-  const clearAll = () => {
-    setFeedbacks([]);
-    localStorage.removeItem("feedbacks");
+  // 🔹 Delete all feedbacks from Firestore
+  const clearAll = async () => {
+    try {
+      for (const fb of feedbacks) {
+        await deleteDoc(doc(db, "feedbacks", fb.id));
+      }
+      setFeedbacks([]);
+    } catch (error) {
+      console.error("Error deleting feedbacks:", error);
+    }
   };
 
   return (
@@ -86,8 +108,8 @@ const FeedbackForm = () => {
           <p>No feedback yet.</p>
         ) : (
           <ul>
-            {feedbacks.map((fb, i) => (
-              <li key={i}>
+            {feedbacks.map((fb) => (
+              <li key={fb.id}>
                 <strong>{fb.name}</strong> ({fb.email}) ⭐ {fb.rating}
                 <br />
                 {fb.feedback}

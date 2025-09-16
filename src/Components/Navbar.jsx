@@ -103,9 +103,16 @@ function Navbar() {
         <NavLink to="/cart" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Cart
         </NavLink>
-        <NavLink to="/login" className={({ isActive }) => (isActive ? "active-link" : "")}>
-          Login
+        <NavLink to="/signin" className={({ isActive }) => (isActive ? "active-link" : "")}>
+         Sign In
         </NavLink>
+        <NavLink to="/signup" className={({ isActive }) => (isActive ? "active-link" : "")}>
+         Sign Up
+        </NavLink>
+
+        {/* <NavLink to="/login" className={({ isActive }) => (isActive ? "active-link" : "")}>
+          Login
+        </NavLink> */}
         {/* <NavLink to="/admin" className={({ isActive }) => (isActive ? "active-link" : "")}>
           Admin
         </NavLink> */}

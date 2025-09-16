@@ -1,163 +1,54 @@
-/* ---- Container ---- */
-.container {
+/* src/Styles/Auth.css */
+.auth-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(135deg, #582406, #feb47b);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  padding: 16px;
+  height: 100vh;
+  background: #fafafa;
 }
 
-/* ---- Form Box ---- */
-.form-box {
-  background: #fff;
-  padding: 32px 28px;
-  border-radius: 16px;
-  width: 100%;
-  max-width: 380px;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-  transition: transform .3s ease;
-}
-
-.form-box:hover {
-  transform: translateY(-19px);
-}
-
-/* ---- Toggle Buttons ---- */
-.toggle-buttons {
-  display: flex;
-  justify-content: center;
-  margin-bottom: 20px;
-}
-
-.toggle-buttons button {
-  flex: 1;
-  padding: 10px;
-  font-size: 15px;
-  font-weight: 600;
-  border: none;
-  cursor: pointer;
-  border-radius: 8px;
-  margin: 0 4px;
-  transition: all .3s ease;
-  background: #f3f4f6;
-  color: #374151;
-}
-
-.toggle-buttons button.active {
-  background: #ff7e5f;
-  color: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
-
-/* ---- Forms ---- */
-.form {
-  display: none;
-  animation: fadeIn .4s ease;
-}
-
-.form.active-form {
-  display: block;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-.form h2 {
+.auth-form {
+  background: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  width: 350px;
   text-align: center;
+}
+
+.auth-form h2 {
   margin-bottom: 20px;
-  color: #111827;
-  font-size: 20px;
-  font-weight: 700;
 }
 
-/* ---- Input Groups ---- */
-.input-group {
-  position: relative;
-  margin-bottom: 16px;
-}
-
-.input-group input {
-  width: 100%;
-  padding: 12px 40px 12px 14px;
-  border-radius: 10px;
-  border: 1px solid #d1d5db;
-  outline: none;
-  font-size: 14px;
-  transition: border-color .25s ease, box-shadow .25s ease;
-}
-
-.input-group input:focus {
-  border-color: #ff7e5f;
-  box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.3);
-}
-
-/* ---- Input Icons ---- */
-.input-icon {
-  position: absolute;
-  right: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 16px;
-  color: #6b7280;
-  cursor: pointer;
-}
-
-/* ---- Submit Button ---- */
-.submit-btn {
+.auth-form input {
   width: 100%;
   padding: 12px;
-  background: #ff7e5f;
-  color: #fff;
-  font-weight: 600;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+.auth-form button {
+  width: 100%;
+  padding: 12px;
+  background: #ff4c29;
+  color: white;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
+  font-size: 16px;
   cursor: pointer;
-  transition: background .3s ease, transform .2s ease;
 }
 
-.submit-btn:hover {
-  background: #eb684d;
-  transform: translateY(-2px);
+.auth-form button:hover {
+  background: #e9441d;
 }
 
-/* ---- Switch Text ---- */
-.switch-text {
-  margin-top: 14px;
-  text-align: center;
-  font-size: 13px;
-  color: #374151;
+.auth-form p {
+  margin-top: 15px;
 }
 
-.switch-text span {
-  color: #ff7e5f;
-  font-weight: 600;
-  cursor: pointer;
-  transition: text-decoration .2s ease;
-}
-
-.switch-text span:hover {
-  text-decoration: underline;
-}
-
-/* ---- Dark Mode ---- */
-@media (prefers-color-scheme: dark) {
-  .form-box {
-    background: #1f2937;
-    color: #f9fafb;
-  }
-  .form h2 { color: #f9fafb; }
-  .input-group input {
-    background: #111827;
-    border: 1px solid #374151;
-    color: #f9fafb;
-  }
-  .input-group input:focus {
-    border-color: #ff7e5f;
-    box-shadow: 0 0 0 3px rgba(255, 126, 95, 0.4);
-  }
-  .switch-text { color: #d1d5db; }
+.error {
+  color: red;
+  font-size: 14px;
+  margin-bottom: 10px;
 }
